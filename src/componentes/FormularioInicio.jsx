@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import '../estilos/FormularioInicio.css';
 import { getData, postData } from '../servicios/fetch';
+import { useNavigate } from 'react-router-dom';
 
 
 const FormularioInicio = ()=>{
+    const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState("login");
     const [isLoading, setIsLoading] = useState(false);
 
@@ -35,7 +37,7 @@ const FormularioInicio = ()=>{
           && usuario.clave === credencialesUsuario.clave)
 
         if(usuarioValido){
-            console.log("Usuario válido")
+            navigate("/inicio")
         }
         else{
             console.log("Usuario inválido")
