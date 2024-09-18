@@ -4,6 +4,7 @@ import Inicio from "../paginas/Inicio"
 import Header from "../componentes/Header"
 import AgregarProducto from "../paginas/AgregarProducto"
 import Menu from "../paginas/Menu"
+import MenuPrivado from "../componentes/MenuPrivado"
 const RutasC  = ()=>{
     return(
         <Router>
@@ -16,7 +17,7 @@ const RutasC  = ()=>{
 
                 <Route path="/agregar" element={<AgregarProducto/>}/>
 
-                <Route path="/menu" element={<Menu/>}/>
+                <Route path="/menu" element={<MenuPrivado> <Menu/>  </MenuPrivado>}/>
             </Routes>
         </Router>
     )

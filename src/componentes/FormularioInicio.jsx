@@ -36,6 +36,11 @@ const FormularioInicio = ()=>{
         const usuarioValido = data.find(usuario=>usuario.correo === credencialesUsuario.correo 
           && usuario.clave === credencialesUsuario.clave)
 
+        if(credencialesUsuario.correo === "admin@gmail.com" && credencialesUsuario.clave === "admin"){
+          navigate("/menu")
+          localStorage.setItem("admin",true)
+        }
+
         if(usuarioValido){
             navigate("/inicio")
         }
