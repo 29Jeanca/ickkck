@@ -12,12 +12,12 @@ const Menu = () => {
             setPlatillos(datos)
         }
         traerPlatillos()
-    },[])
+    },[platillos])
 
     return (
         <div>
             <h1>Menu</h1>
-            <ListaCards platillos={platillos}/>
+            <ListaCards platillos={platillos} mostrarEliminar={true}/>
 
             <button className="btn btn-primary" onClick={()=>{navigate("/agregar")}}>Agregar un nuevo producto</button>
         </div>
